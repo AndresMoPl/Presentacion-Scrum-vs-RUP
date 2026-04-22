@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCRUM vs RUP — Comparativa de Metodologías</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ PROGRESS BAR ░░ -->
+  <div id="progress-bar"></div>
+
+  <!-- ░░ NAV ░░ -->
+  <nav id="main-nav">
+    <div class="nav-logo">S<span>vs</span>R</div>
+    <ul class="nav-links">
+      <li><a href="#intro" data-label="Intro">01</a></li>
+      <li><a href="#scrum" data-label="Scrum">02</a></li>
+      <li><a href="#rup" data-label="RUP">03</a></li>
+      <li><a href="#comparativa" data-label="Comparativa">04</a></li>
+      <li><a href="#ventajas" data-label="Ventajas">05</a></li>
+      <li><a href="#casos" data-label="Casos">06</a></li>
+      <li><a href="#conclusion" data-label="Conclusión">07</a></li>
+    </ul>
+    <div class="nav-indicator" id="nav-indicator"></div>
+  </nav>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 1 — PORTADA                        -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="hero" class="section-full">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content reveal-hero">
+      <div class="hero-tag">Ingeniería de Software · Metodologías</div>
+      <h1 class="hero-title">
+        <span class="word-scrum">SCRUM</span>
+        <span class="hero-vs">vs</span>
+        <span class="word-rup">RUP</span>
+      </h1>
+      <p class="hero-subtitle">Comparación estratégica de metodologías<br>de desarrollo de software</p>
+      <a href="#intro" class="cta-btn">
+        <span>Explorar presentación</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-ring"></div>
+      <span>2025</span>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 2 — INTRODUCCIÓN                   -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="intro" class="section-full section-dark">
+    <div class="section-inner">
+      <div class="section-label reveal">// 01 — Introducción</div>
+      <h2 class="section-title reveal">¿Por qué importa<br><em>la metodología</em>?</h2>
+      <div class="intro-grid">
+        <div class="intro-card reveal" data-delay="0">
+          <div class="intro-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Definición</h3>
+          <p>Una metodología de desarrollo es el conjunto estructurado de prácticas, roles, procesos y principios que guía cómo un equipo construye software de principio a fin.</p>
+        </div>
+        <div class="intro-card reveal" data-delay="1">
+          <div class="intro-icon accent-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Impacto real</h3>
+          <p>El 68 % de los proyectos de software fallan por mala gestión de procesos. Una metodología correcta puede ser la diferencia entre el éxito y el fracaso total.</p>
+        </div>
+        <div class="intro-card reveal" data-delay="2">
+          <div class="intro-icon accent-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <h3>Contexto actual</h3>
+          <p>Las empresas tecnológicas compiten en velocidad. Elegir entre agilidad e ingeniería formal es una decisión estratégica que define la cultura del equipo y la viabilidad del producto.</p>
+        </div>
+        <div class="intro-card reveal" data-delay="3">
+          <div class="intro-icon accent-pink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Equipos y personas</h3>
+          <p>No existe una solución universal. Cada proyecto, cada equipo y cada cliente demanda un marco de trabajo diferente. Conocer ambas metodologías es esencial para todo ingeniero de software.</p>
+        </div>
+      </div>
+      <div class="intro-stat-row reveal">
+        <div class="stat-item">
+          <span class="stat-num" data-target="68">0</span><span class="stat-pct">%</span>
+          <span class="stat-label">proyectos fallan por mala gestión</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="40">0</span><span class="stat-pct">%</span>
+          <span class="stat-label">usan Scrum como marco ágil principal</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="3">0</span><span class="stat-pct">x</span>
+          <span class="stat-label">más rápido con metodología adecuada</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 3 — SCRUM                          -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="scrum" class="section-full section-scrum">
+    <div class="section-inner">
+      <div class="section-label reveal">// 02 — Metodología Ágil</div>
+      <h2 class="section-title reveal">¿Qué es <em>Scrum?</em></h2>
+
+      <div class="two-col reveal">
+        <div class="col-text">
+          <p class="lead-text">Scrum es un <strong>marco de trabajo ágil</strong> creado por Jeff Sutherland y Ken Schwaber en 1995. Basado en los principios del Manifiesto Ágil (2001), permite a equipos pequeños entregar valor incremental de forma continua y adaptarse rápido al cambio.</p>
+          <div class="tag-row">
+            <span class="tag tag-blue">Ágil</span>
+            <span class="tag tag-blue">Iterativo</span>
+            <span class="tag tag-blue">Incremental</span>
+            <span class="tag tag-blue">Empírico</span>
+          </div>
+        </div>
+        <div class="col-visual scrum-origin-card">
+          <div class="origin-year">1995</div>
+          <div class="origin-line"></div>
+          <div class="origin-authors">
+            <span>Jeff Sutherland</span>
+            <span>Ken Schwaber</span>
+          </div>
+          <div class="origin-sub">Manifesto Ágil · 2001</div>
+        </div>
+      </div>
+
+      <!-- ROLES -->
+      <h3 class="sub-title reveal">Los 3 Roles de Scrum</h3>
+      <div class="roles-grid">
+        <div class="role-card reveal" data-delay="0">
+          <div class="role-icon role-po">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3v4M8 3v4M12 12v.01"/></svg>
+          </div>
+          <h4>Product Owner</h4>
+          <p>Representa al cliente. Define y prioriza el Product Backlog para maximizar el valor del producto.</p>
+          <ul>
+            <li>Gestiona el backlog</li>
+            <li>Define prioridades</li>
+            <li>Acepta o rechaza entregables</li>
+          </ul>
+        </div>
+        <div class="role-card reveal" data-delay="1">
+          <div class="role-icon role-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Scrum Master</h4>
+          <p>Líder servidor del equipo. Elimina obstáculos y garantiza que Scrum se aplique correctamente.</p>
+          <ul>
+            <li>Facilita ceremonias</li>
+            <li>Protege al equipo</li>
+            <li>Elimina impedimentos</li>
+          </ul>
+        </div>
+        <div class="role-card reveal" data-delay="2">
+          <div class="role-icon role-dt">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4>Development Team</h4>
+          <p>Equipo autoorganizado de 3–9 personas que convierte el backlog en incrementos de producto funcional.</p>
+          <ul>
+            <li>Autoorganizado</li>
+            <li>Multifuncional</li>
+            <li>Entrega el incremento</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EVENTOS -->
+      <h3 class="sub-title reveal">Eventos del Sprint</h3>
+      <div class="sprint-flow reveal">
+        <div class="sprint-wrapper">
+          <div class="sprint-center-label">SPRINT<br><small>1–4 semanas</small></div>
+          <div class="sprint-event s-e1">
+            <div class="se-dot"></div>
+            <strong>Sprint Planning</strong>
+            <span>Define el objetivo y las tareas del sprint</span>
+          </div>
+          <div class="sprint-event s-e2">
+            <div class="se-dot"></div>
+            <strong>Daily Scrum</strong>
+            <span>Sincronización diaria de 15 minutos</span>
+          </div>
+          <div class="sprint-event s-e3">
+            <div class="se-dot"></div>
+            <strong>Sprint Review</strong>
+            <span>Inspección del incremento con stakeholders</span>
+          </div>
+          <div class="sprint-event s-e4">
+            <div class="se-dot"></div>
+            <strong>Retrospective</strong>
+            <span>Mejora continua del equipo y procesos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTEFACTOS -->
+      <h3 class="sub-title reveal">Artefactos</h3>
+      <div class="artifacts-row">
+        <div class="artifact-card reveal" data-delay="0">
+          <div class="artifact-num">01</div>
+          <h4>Product Backlog</h4>
+          <p>Lista ordenada de todo lo que el producto podría necesitar. Gestionado por el PO.</p>
+        </div>
+        <div class="artifact-arrow reveal">→</div>
+        <div class="artifact-card reveal" data-delay="1">
+          <div class="artifact-num">02</div>
+          <h4>Sprint Backlog</h4>
+          <p>Subconjunto del Product Backlog seleccionado para el sprint, más el plan de entrega.</p>
+        </div>
+        <div class="artifact-arrow reveal">→</div>
+        <div class="artifact-card reveal" data-delay="2">
+          <div class="artifact-num">03</div>
+          <h4>Increment</h4>
+          <p>Versión funcional y potencialmente entregable del producto al final de cada sprint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 4 — RUP                            -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="rup" class="section-full section-rup">
+    <div class="section-inner">
+      <div class="section-label reveal">// 03 — Proceso Unificado</div>
+      <h2 class="section-title reveal">¿Qué es <em>RUP?</em></h2>
+
+      <div class="two-col reveal">
+        <div class="col-text">
+          <p class="lead-text">RUP (Rational Unified Process) es un <strong>proceso de ingeniería de software</strong> desarrollado por Rational Software (IBM) en 1998. Es iterativo, orientado a arquitectura y guiado por casos de uso. Prioriza la documentación, el control y la planificación estructurada.</p>
+          <div class="tag-row">
+            <span class="tag tag-amber">Estructurado</span>
+            <span class="tag tag-amber">Documental</span>
+            <span class="tag tag-amber">Arquitectónico</span>
+            <span class="tag tag-amber">Formal</span>
+          </div>
+        </div>
+        <div class="col-visual rup-origin-card">
+          <div class="origin-year rup-year">1998</div>
+          <div class="origin-line rup-line"></div>
+          <div class="origin-authors">
+            <span>Rational Software</span>
+            <span>IBM</span>
+          </div>
+          <div class="origin-sub">Grady Booch · Ivar Jacobson · James Rumbaugh</div>
+        </div>
+      </div>
+
+      <!-- FASES RUP -->
+      <h3 class="sub-title reveal">Las 4 Fases de RUP</h3>
+      <div class="rup-timeline reveal">
+        <div class="rup-phase" data-phase="1">
+          <div class="rp-number">01</div>
+          <div class="rp-bar" style="--h:35%"></div>
+          <div class="rp-info">
+            <h4>Inicio</h4>
+            <p>Define el alcance, viabilidad y objetivos del proyecto. Identifica actores, casos de uso principales y riesgos críticos.</p>
+            <ul>
+              <li>Visión del proyecto</li>
+              <li>Factibilidad</li>
+              <li>Plan de negocio</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rup-phase" data-phase="2">
+          <div class="rp-number">02</div>
+          <div class="rp-bar" style="--h:65%"></div>
+          <div class="rp-info">
+            <h4>Elaboración</h4>
+            <p>Establece la arquitectura base del sistema. Refina requisitos y mitiga los riesgos arquitectónicos de mayor impacto.</p>
+            <ul>
+              <li>Arquitectura base</li>
+              <li>Mitigación de riesgos</li>
+              <li>Plan detallado</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rup-phase" data-phase="3">
+          <div class="rp-number">03</div>
+          <div class="rp-bar" style="--h:100%"></div>
+          <div class="rp-info">
+            <h4>Construcción</h4>
+            <p>Implementación iterativa de todos los componentes y funcionalidades del sistema. Es la fase de mayor esfuerzo.</p>
+            <ul>
+              <li>Desarrollo del código</li>
+              <li>Pruebas iterativas</li>
+              <li>Integración continua</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rup-phase" data-phase="4">
+          <div class="rp-number">04</div>
+          <div class="rp-bar" style="--h:45%"></div>
+          <div class="rp-info">
+            <h4>Transición</h4>
+            <p>Entrega del producto al usuario final. Incluye beta testing, corrección de defectos, entrenamiento y despliegue.</p>
+            <ul>
+              <li>Beta testing</li>
+              <li>Capacitación</li>
+              <li>Despliegue productivo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="rup-disciplines reveal">
+        <div class="disc-label">Disciplinas transversales</div>
+        <div class="disc-pills">
+          <span>Modelado del negocio</span>
+          <span>Requisitos</span>
+          <span>Análisis y diseño</span>
+          <span>Implementación</span>
+          <span>Pruebas</span>
+          <span>Despliegue</span>
+          <span>Gestión de configuración</span>
+          <span>Gestión del proyecto</span>
+          <span>Entorno</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 5 — COMPARATIVA                    -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="comparativa" class="section-full section-dark">
+    <div class="section-inner">
+      <div class="section-label reveal">// 04 — Comparativa</div>
+      <h2 class="section-title reveal">Scrum <em>vs</em> RUP</h2>
+      <p class="section-desc reveal">Un análisis visual de los criterios clave que diferencian ambas metodologías.</p>
+
+      <div class="comp-table reveal">
+        <div class="ct-header">
+          <div class="ct-criterion">Criterio</div>
+          <div class="ct-scrum">SCRUM</div>
+          <div class="ct-rup">RUP</div>
+        </div>
+
+        <!-- Rows generadas dinámicamente en JS -->
+        <div id="comp-rows"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 6 — VENTAJAS Y DESVENTAJAS         -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="ventajas" class="section-full">
+    <div class="section-inner">
+      <div class="section-label reveal">// 05 — Análisis</div>
+      <h2 class="section-title reveal">Ventajas <em>&</em> Desventajas</h2>
+
+      <div class="pros-cons-grid">
+        <!-- SCRUM VENTAJAS -->
+        <div class="pc-card pc-scrum-pro reveal">
+          <div class="pc-header">
+            <span class="pc-badge badge-green">SCRUM</span>
+            <span class="pc-type">Ventajas</span>
+          </div>
+          <ul class="pc-list">
+            <li><span class="icon-plus">✦</span>Alta adaptabilidad al cambio</li>
+            <li><span class="icon-plus">✦</span>Entrega de valor desde el primer sprint</li>
+            <li><span class="icon-plus">✦</span>Mayor satisfacción del cliente</li>
+            <li><span class="icon-plus">✦</span>Equipos autoorganizados y motivados</li>
+            <li><span class="icon-plus">✦</span>Ciclos de retroalimentación cortos</li>
+            <li><span class="icon-plus">✦</span>Detección temprana de problemas</li>
+            <li><span class="icon-plus">✦</span>Reducción de riesgo iterativa</li>
+          </ul>
+        </div>
+        <!-- SCRUM DESVENTAJAS -->
+        <div class="pc-card pc-scrum-con reveal" data-delay="1">
+          <div class="pc-header">
+            <span class="pc-badge badge-blue">SCRUM</span>
+            <span class="pc-type">Desventajas</span>
+          </div>
+          <ul class="pc-list">
+            <li><span class="icon-minus">◆</span>Documentación limitada</li>
+            <li><span class="icon-minus">◆</span>Difícil escalar en proyectos grandes</li>
+            <li><span class="icon-minus">◆</span>Requiere cliente muy involucrado</li>
+            <li><span class="icon-minus">◆</span>Alcance puede volverse inestable</li>
+            <li><span class="icon-minus">◆</span>Poco control de deuda técnica</li>
+            <li><span class="icon-minus">◆</span>No apto para proyectos regulados</li>
+          </ul>
+        </div>
+        <!-- RUP VENTAJAS -->
+        <div class="pc-card pc-rup-pro reveal" data-delay="2">
+          <div class="pc-header">
+            <span class="pc-badge badge-amber">RUP</span>
+            <span class="pc-type">Ventajas</span>
+          </div>
+          <ul class="pc-list">
+            <li><span class="icon-plus icon-amber">✦</span>Documentación exhaustiva</li>
+            <li><span class="icon-plus icon-amber">✦</span>Arquitectura robusta y planificada</li>
+            <li><span class="icon-plus icon-amber">✦</span>Trazabilidad total de requisitos</li>
+            <li><span class="icon-plus icon-amber">✦</span>Ideal para proyectos complejos</li>
+            <li><span class="icon-plus icon-amber">✦</span>Control de calidad estructurado</li>
+            <li><span class="icon-plus icon-amber">✦</span>Gestión formal del riesgo</li>
+            <li><span class="icon-plus icon-amber">✦</span>Apto para sectores regulados</li>
+          </ul>
+        </div>
+        <!-- RUP DESVENTAJAS -->
+        <div class="pc-card pc-rup-con reveal" data-delay="3">
+          <div class="pc-header">
+            <span class="pc-badge badge-orange">RUP</span>
+            <span class="pc-type">Desventajas</span>
+          </div>
+          <ul class="pc-list">
+            <li><span class="icon-minus icon-orange">◆</span>Proceso pesado y costoso</li>
+            <li><span class="icon-minus icon-orange">◆</span>Curva de aprendizaje alta</li>
+            <li><span class="icon-minus icon-orange">◆</span>Poca flexibilidad ante cambios</li>
+            <li><span class="icon-minus icon-orange">◆</span>Exceso de artefactos y roles</li>
+            <li><span class="icon-minus icon-orange">◆</span>Entrega tardía de valor</li>
+            <li><span class="icon-minus icon-orange">◆</span>Requiere mucha planificación inicial</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 7 — CASOS DE USO                   -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="casos" class="section-full section-dark">
+    <div class="section-inner">
+      <div class="section-label reveal">// 06 — Aplicación práctica</div>
+      <h2 class="section-title reveal">¿Cuándo usar <em>cada una?</em></h2>
+
+      <div class="use-cases-grid">
+        <div class="uc-column reveal">
+          <div class="uc-header uc-scrum-header">
+            <div class="uc-icon">⚡</div>
+            <h3>Usar SCRUM cuando…</h3>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">🚀 Startups tecnológicas</div>
+            <p>Velocidad de validación, pivotar rápido y entregar MVPs en semanas.</p>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">📱 Apps y productos digitales</div>
+            <p>Productos con usuarios reales donde el feedback constante es crítico para evolucionar.</p>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">🛒 E-commerce / SaaS</div>
+            <p>Plataformas en evolución continua donde features se prueban y descartan rápidamente.</p>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">🎮 Videojuegos indie</div>
+            <p>Equipos pequeños con visión creativa que necesitan iterar sobre gameplay y UX.</p>
+          </div>
+          <div class="uc-card highlight-card">
+            <strong>Perfil ideal:</strong> Equipos de 3–9 personas, proyectos con requisitos cambiantes, cliente disponible, entrega rápida.
+          </div>
+        </div>
+
+        <div class="uc-divider reveal">
+          <div class="ud-line"></div>
+          <div class="ud-circle">VS</div>
+          <div class="ud-line"></div>
+        </div>
+
+        <div class="uc-column reveal" data-delay="1">
+          <div class="uc-header uc-rup-header">
+            <div class="uc-icon">🏛</div>
+            <h3>Usar RUP cuando…</h3>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">🏦 Banca y fintech regulado</div>
+            <p>Sistemas de pagos, core bancario y software financiero con cumplimiento normativo estricto.</p>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">🏥 Sistemas de salud</div>
+            <p>Software médico con normas ISO, FDA o regulaciones que exigen trazabilidad total.</p>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">🏛 Gobierno y sector público</div>
+            <p>Proyectos con contratos formales, auditorías y entregables documentales obligatorios.</p>
+          </div>
+          <div class="uc-card">
+            <div class="uc-industry">✈ Aeronáutica / Defensa</div>
+            <p>Sistemas críticos donde el fallo tiene consecuencias catastróficas e irreversibles.</p>
+          </div>
+          <div class="uc-card highlight-card rup-highlight">
+            <strong>Perfil ideal:</strong> Proyectos grandes, requisitos estables, alta regulación, múltiples equipos, contratos formales.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 8 — CONCLUSIÓN                     -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="conclusion" class="section-full">
+    <div class="section-inner">
+      <div class="section-label reveal">// 07 — Reflexión final</div>
+      <h2 class="section-title reveal">¿Cuál elegir?</h2>
+
+      <div class="conclusion-grid">
+        <div class="cg-card reveal">
+          <div class="cg-icon">🎯</div>
+          <h4>No existe la metodología perfecta</h4>
+          <p>Cada proyecto es único. Lo que funcionó para Google puede no funcionar para un banco central. El contexto lo es todo.</p>
+        </div>
+        <div class="cg-card reveal" data-delay="1">
+          <div class="cg-icon">⚖️</div>
+          <h4>Evalúa antes de decidir</h4>
+          <p>Analiza: tamaño del equipo, naturaleza del cliente, nivel de regulación, claridad de requisitos y presupuesto disponible.</p>
+        </div>
+        <div class="cg-card reveal" data-delay="2">
+          <div class="cg-icon">🔀</div>
+          <h4>Los híbridos son válidos</h4>
+          <p>Muchas organizaciones combinan la arquitectura formal de RUP con la agilidad de Scrum para obtener lo mejor de ambos mundos.</p>
+        </div>
+        <div class="cg-card reveal" data-delay="3">
+          <div class="cg-icon">🧠</div>
+          <h4>La estrategia define el éxito</h4>
+          <p>Un equipo brillante con la metodología incorrecta fallará. La elección correcta convierte la complejidad en ventaja competitiva.</p>
+        </div>
+      </div>
+
+      <div class="decision-matrix reveal">
+        <h3>Guía de decisión rápida</h3>
+        <div class="dm-row">
+          <span class="dm-q">¿Requisitos cambian constantemente?</span>
+          <span class="dm-arrow">→</span>
+          <span class="dm-a dm-scrum">SCRUM</span>
+        </div>
+        <div class="dm-row">
+          <span class="dm-q">¿Proyecto regulado con auditorías?</span>
+          <span class="dm-arrow">→</span>
+          <span class="dm-a dm-rup">RUP</span>
+        </div>
+        <div class="dm-row">
+          <span class="dm-q">¿Startup o producto digital?</span>
+          <span class="dm-arrow">→</span>
+          <span class="dm-a dm-scrum">SCRUM</span>
+        </div>
+        <div class="dm-row">
+          <span class="dm-q">¿Sistema crítico con arquitectura compleja?</span>
+          <span class="dm-arrow">→</span>
+          <span class="dm-a dm-rup">RUP</span>
+        </div>
+        <div class="dm-row">
+          <span class="dm-q">¿Equipo pequeño y cliente activo?</span>
+          <span class="dm-arrow">→</span>
+          <span class="dm-a dm-scrum">SCRUM</span>
+        </div>
+        <div class="dm-row">
+          <span class="dm-q">¿Proyecto con contrato de precio fijo?</span>
+          <span class="dm-arrow">→</span>
+          <span class="dm-a dm-rup">RUP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <!-- SECCIÓN 9 — CIERRE IMPACTANTE              -->
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <section id="final" class="section-full section-final">
+    <canvas id="final-canvas"></canvas>
+    <div class="final-content">
+      <div class="final-quote reveal-final">
+        <span class="fq-pre">No se trata de elegir</span>
+        <span class="fq-bold">la metodología más famosa,</span>
+        <span class="fq-mid">sino</span>
+        <span class="fq-accent">la más adecuada</span>
+        <span class="fq-end">para resolver el problema correcto.</span>
+      </div>
+      <div class="final-meta reveal-final-delayed">
+        <span>SCRUM vs RUP</span>
+        <span class="meta-dot">·</span>
+        <span>Ingeniería de Software</span>
+        <span class="meta-dot">·</span>
+        <span>2025</span>
+      </div>
+      <a href="#hero" class="back-top reveal-final-delayed">↑ Volver al inicio</a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
